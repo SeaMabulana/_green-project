@@ -1,0 +1,65 @@
+{% extends 'C:\Users\Romeo\Desktop\Easy\_green\_green-project\green_\templates\_base.html' %}
+{% load static %}
+
+{% block title %}
+    _RC
+{% endblock %}
+
+{% block head %}
+  <section class='head'>
+    <h1>Logo</h1>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class='task register' id='register'>
+    <form name='registerForm' class='newuser-form'
+      action='{% url "_users:index" %}' method='post'>
+      {% csrf_token %}
+      <h1>Account Register</h1>
+      {% for field in form %}
+        <div class='form-control {% if field.errors %}errors{% endif %}'>
+          {{ field }}
+          {{ field.errors }}
+        </div>
+      {% endfor %}
+      <div class='confirm-box' id='registerConfirmbox'>
+        <p>Please verfiy details before submiting.</p>
+        <hr>
+        <button type='submit' name='submit'>submit</button>
+        <button type='button' name='cancel' class='cancel'>&#9747</button>
+      </div>
+      <button type='button' name='register'>Register</button> 
+    </form>
+  </section>
+
+  <section class='task about'>
+    <h1>About</h1>
+    <p>
+      Info ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------n
+    </p>
+  </section>
+{% endblock %}
+
+{% block context-container %}
+  <section id='regPswRequirementsBox'>
+    <h3>Password must contain the following:</h3>
+    <p id='registerLength' class='invalid'>Minimum 8 characters</p>
+    <p id='registerLowercase' class='invalid'>Lowercase letter</p>
+    <p id='registerUppercase' class='invalid'>Uppercase letter</p>
+    <p id='registerSplcharacter' class='invalid'>Special character /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g</p>
+    <p id='registerNumber' class='invalid'>A number</p>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  <section class='footer navbar'>
+    <a href='{% url "_users:login-index" %}'>Login</a>
+    <button class='navB'>Button</button>
+    <!-- <button class='navB' id='bRegister' data-page='register'>Register</button>  -->
+  </section>
+{% endblock %}
+
+

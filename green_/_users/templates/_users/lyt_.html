@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <link rel="shortcut icon" type="img/jpg" href="{% static 'FLG.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '_style3.css' %}">
+
+    {% if messages %}
+      <div class='msg-container' id='msgbox'>
+        <div class='message'>
+          {% for message in messages %}
+            <span id='closemsgbox'>&#9747</span>
+            <p {% if message.tags %} class='{{ message.tags }} msg'{% endif %}>
+              {{ message }}
+            </p>
+          {% endfor %}
+        </div>
+        <script src='static/msg_2.js'></script>
+      </div>
+    {% endif %}
+
+  </head>
+  <body>
+    <section class='top-container'>
+      {%  block head %}
+      {% endblock %}
+    </section>
+    
+    <section class='content-grid-container'>
+      {% block content %}
+      {% endblock %}
+    </section>
+
+    <section id='contextcontainer' class='context-container'>
+      {% block context-container %}
+      {% endblock %}
+    </section>
+
+    <section class='footer-container'>
+      {% block footer %}
+      {%  endblock %}
+    </section>
+  </body>
+  <script src='static/js_3.js'></script>
+</html>

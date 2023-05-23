@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: cursive;
+    font-size: small;
+  }
+  body {
+    width: 100%;
+    display: grid;
+    margin: 0;
+    background-color: #e6e6e6;
+    z-index: 0;
+  }
+  .top-container {
+    top: 0;
+    width: 100vw;
+    position: fixed;
+    display: grid;
+    align-content: flex-start;
+    z-index: 3;
+  }
+  .head {
+    background-color: #394639; 
+    color: ghostwhite;
+    box-shadow: 0 4px 8px 0 
+    rgba(0, 0, 0, 0.2), 0 6px 20px 0 
+    rgba(0, 0, 0, 0.19);
+  }
+  
+  .content-grid-container {
+    width: 100%;
+    display: grid;
+    /* align-content: start; */
+    /* grid-template-columns: auto auto auto; */
+    gap: 2px;
+    z-index: 2;
+    background-color: transparent;
+    padding: 10rem 0.7rem 10rem 0.7rem;
+  }
+  .task {
+    margin: auto;
+    background-color: #f8f8ff;
+    box-shadow: 
+    0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .context-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 10rem 1.5rem 0 1.5rem;
+  }
+  .context-container section {
+    margin: auto;
+    background-color: #f8f8ff;
+    padding: 1.5rem;
+  }
+
+  .footer-container {
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    position: fixed;
+    display: grid;
+  }
+  .footer {
+    display: flex;
+    background-color:#000000;
+  }
+  .navbar a {
+    width: auto;
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    display: block;
+  }
+  .navbar a:hover {
+    background-color: #e6e6e6;
+    color: #000000;
+  }
+  .navbar a:focus {
+    background-color: #e6e6e6;
+    color: #000000;
+  }
+  .form-control {
+    padding: 0.2rem;
+  }
+  .errors input {
+    background-color: #ffcccc;
+  }
+  ul.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .errorlist li {
+    font-size: small;
+  }
+  form h1  {
+    color: #004d00;
+  }
+  /* form p {
+    margin: 7px;
+  } */
+  form {
+    /* top - right - bottom - left */
+    padding: 1.4rem 0.7rem 1.4rem 0.7rem;
+  }
+  input {
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: 1px solid #c0c0c0;
+    background-color: #f8f8ff;
+    padding: 4px 7px;
+  }
+  /* 
+hide view password icon 
+*/
+input[type=password]::-ms-reveal {
+    display: none;
+  }
+  @media only screen and (max-width: 600px) {
+    .task,
+    .context-container section {
+      width: 100%; 
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    .task,
+    .context-container section {
+      width: 47%;
+    }
+  }
+  @media screen and (min-width:1024px) {
+    .task,
+    .context-container section {
+      width: 30%;
+    }
+  }
+
+  /* .newuser-form  ul, .helptext {
+   display: none;
+  } */
+  /* buttons */
+  button {
+    border: none;
+    outline: none;
+    color: #999999;
+    padding: 7px 12px;
+    background-color: #cccccc;
+    font-size: small;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+  button:hover,
+  button:focus {
+    color: #000000;
+  }
+  button.cancel:hover, 
+  button.cancel:focus {
+    color: rgb(255, 0, 0);
+  }
+  
+  button[name=register] {
+    margin: 0.7rem auto;
+  }
+  
+  .msg-container {
+    position: fixed;
+    width: 100%;
+    /* padding: top - right - bottom - left */
+    padding: 4rem 1.5rem 0 1.5rem;
+    z-index: 5;
+  }
+  .msg {
+    font-weight: lighter;
+    padding: 0.4rem;
+    position: fixed;
+    z-index: 5;
+    margin: 4rem auto;
+    width: 100%;
+  }
+  .success {
+    color: #394639;
+  }
+  .info {
+    color: #0066cc;
+  }
+  .warning {
+    color: #ff4d4d;
+  }
+  .error {
+    color: #cc0000;
+  }
+  .msg span {
+    margin-left: 0.4rem;
+    text-decoration: none;
+    color: #c0c0c0;
+    padding: 0.4rem;
+    font-size: medium;
+    font-weight: bolder;
+  }
+  .msg span:visited {
+    text-decoration: none;
+  }
+  .msg span:hover {
+    cursor: pointer;
+    color: #ffffff;
+  }

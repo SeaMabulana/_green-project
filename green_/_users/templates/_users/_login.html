@@ -1,0 +1,46 @@
+{% extends 'C:\Users\Romeo\Desktop\Easy\_green\_green-project\green_\templates\_base.html' %}
+{% load static %}
+
+{% block head %}
+  <section class='head'>
+    <h1>Logo</h1>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class='login task login-task1' id='login'>
+    {% if login_context %}
+      <div id='context'>
+        <p><b>Invalid Login Credentials!</b></p>
+      </div>
+    {% endif %}
+    <form name='loginForm' 
+    action='{% url "_users:login" %}' method='post'>
+      {% csrf_token %}
+      <h1>Login</h1>
+      <p>
+      <input
+      type='text'
+      name='username'
+      placeholder='Enter Username '>
+      </p>
+      <p>
+      <input
+      type='password'
+      name='password'
+      placeholder='Password'> 
+      </p>
+      <p id='shwpswloginform'>show password</p> 
+      <button type='submit' name='submit' >login</button>
+      <a href='/'><button type='button' class='cancel'>close</button></a>
+    </form>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  <section class='footer navbar'>
+    <a href=''>Link</a>
+    <button class='navB' id='bLogin' data-page='login'>Button</button>
+    <!-- <button class='navB' id='bRegister' data-page='register'>Register</button>  -->
+  </section>
+{% endblock %}

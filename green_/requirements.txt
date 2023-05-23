@@ -1,0 +1,9 @@
+asgiref==3.6.0
+Django==4.1.7
+django-phonenumber-field==7.0.2
+luhn==0.2.0
+phonenumbers==8.13.7
+psycopg2==2.9.5
+sqlparse==0.4.3
+tzdata==2022.7
+za-id-number==0.0.8

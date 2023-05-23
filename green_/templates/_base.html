@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <link rel="shortcut icon" type="img/jpg" href="{% static 'FLG.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '_users_index.css' %}">
+
+    {% if messages %}
+      {% for message in messages %}
+        <div {% if message.tags %} class='{{ message.tags }} msg' id='msg'{% endif %}>
+          <p>{{ message }}<span id='closemsgbox'>&#9747</span></p>
+        </div>
+      {% endfor %}
+    <script src='static/_msg.js'></script>
+  {% endif %}
+
+  </head>
+  <body>
+    <section class='top-container'>
+      {%  block head %}
+      {% endblock %}
+    </section>
+    
+    <section class='content-grid-container'>
+      {% block content %}
+      {% endblock %}
+    </section>
+
+    <section id='contextcontainer' class='context-container'>
+      {% block context-container %}
+      {% endblock %}
+    </section>
+
+    <section class='footer-container'>
+      {% block footer %}
+      {%  endblock %}
+    </section>
+  </body>
+  <script src='static/_users_index.js'></script>
+</html>

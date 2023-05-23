@@ -1,0 +1,69 @@
+/* register */
+#regPswRequirementsBox * {
+    margin: 0;
+    font-weight: lighter; 
+    font-size: x-small;
+}
+#regPswRequirementsBox h3 {
+  color: #d30000;
+}
+#regPswRequirementsBox p {
+    text-align: left;
+}
+.confirm-box {
+  margin: auto;
+  width: fit-content;
+  display: none;
+}
+/* 
+when the requirements are right 
+Add a green color and a checkmark [✔] 
+*/
+.valid {
+    color: green;
+  }
+.valid:before {
+    position: relative;
+    left: -10px;
+    content: ' ✔ ';
+    font-weight: bold;
+}
+/* 
+invalid text color 
+*/
+.invalid {
+    color: #999999;
+}
+/*
+Empty inputs context
+*/
+  .empty-fld::before {
+    content: 'Please fill in this field';
+    position: absolute;
+    padding: 4px 7px;
+    font-weight: lighter;
+    color: #d30000;
+    background-color: #f8f8ff;
+  }
+/*
+Match psw context
+*/
+.pswdntmtch:before {
+    content: 'Passwords don\'t match';
+    position: absolute;
+    padding: 4px 7px;
+    font-weight: lighter;
+    color: #ff0000;
+    background-color: #f8f8ff;
+  }
+
+  #registerConfirmbox:focus {
+    background-color: coral;
+  }
+  
+  .about {
+    background-color: #ccff99;
+  }
+  .about p {
+    padding: 1.4rem 0.7rem 0 0.7rem;
+  }
